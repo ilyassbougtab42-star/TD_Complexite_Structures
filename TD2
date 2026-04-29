@@ -1,0 +1,20 @@
+#include <stdio.h>
+void triInsertion(int tab[], int n) {
+    for(int i=1; i<n; i++) {
+        int cle = tab[i];
+        int j = i-1;
+        while(j>=0 && tab[j] > cle) {
+            tab[j+1] = tab[j];
+            j--;
+        }
+        tab[j+1] = cle;
+    }
+}
+int main() {
+    int t[] = {5,3,8,1,2};
+    int n = 5;
+    triInsertion(t,n);
+    for(int i=0;i<n;i++) printf("%d ",t[i]);
+    return 0;
+}
+
