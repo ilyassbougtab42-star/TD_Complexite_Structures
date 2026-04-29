@@ -1,0 +1,27 @@
+#include <stdio.h>
+#include <stdlib.h>
+typedef struct Node {
+    int data;
+    struct Node* next;
+} Node;
+int main() {
+    Node* head = malloc(sizeof(Node));
+    head->data = 1;
+    head->next = malloc(sizeof(Node));
+    head->next->data = 2;
+    head->next->next = NULL;
+    Node* tmp = head;
+    while(tmp) { printf("%d ", tmp->data); tmp = tmp->next; }
+    return 0;
+}
+ #include <stdio.h>
+#define MAX 100
+int pile[MAX], top=-1;
+void push(int x){ pile[++top]=x; }
+int pop(){ return pile[top--]; }
+int main(){
+    push(10); push(20);
+    printf("%d\n",pop());
+    printf("%d\n",pop());
+    return 0;
+}
